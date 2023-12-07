@@ -85,7 +85,7 @@ public class LemmyAPI {
 		return result
 	}
 
-	public func requestPublisher<T: APIRequest>(_ apiRequest: T) -> AnyPublisher<C, Error> {
+    public func requestPublisher<T: APIRequest>(_ apiRequest: T) -> AnyPublisher<T.Response, Error> {
 		guard let request = try? urlRequest(apiRequest)
 		else {
 			return Fail(error: NSError(domain: "Could not complete the request", code: 400))
