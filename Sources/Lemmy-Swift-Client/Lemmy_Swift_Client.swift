@@ -85,11 +85,7 @@ public class LemmyAPI {
 		return result
 	}
 
-	public func requestPublisher<T: APIRequest, C: Codable>(
-		_ apiRequest: T,
-		to _: C
-			.Type
-	) -> AnyPublisher<C, Error> {
+	public func requestPublisher<T: APIRequest>(_ apiRequest: T) -> AnyPublisher<C, Error> {
 		guard let request = try? urlRequest(apiRequest)
 		else {
 			return Fail(error: NSError(domain: "Could not complete the request", code: 400))
@@ -107,7 +103,7 @@ public class LemmyAPI {
 				}
 				return element.data
 			}
-			.decode(type: C.self, decoder: JSONDecoder())
+			.decode(type: T.Response.self, decoder: JSONDecoder())
 			.eraseToAnyPublisher()
 	}
 }
