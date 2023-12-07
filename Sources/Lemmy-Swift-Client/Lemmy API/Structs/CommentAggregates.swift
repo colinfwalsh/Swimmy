@@ -1,7 +1,10 @@
 import Foundation
 
 public struct CommentAggregates: Codable, Identifiable, Hashable {
-	public let id: Int
+    public var id: Int {
+        return self.comment_id
+    }
+    
 	public let comment_id: CommentId
 	public let score: Int
 	public let upvotes: Int
@@ -11,7 +14,6 @@ public struct CommentAggregates: Codable, Identifiable, Hashable {
 	public let hot_rank: Int
 
 	public init(
-		id: Int,
 		comment_id: CommentId,
 		score: Int,
 		upvotes: Int,
@@ -20,7 +22,6 @@ public struct CommentAggregates: Codable, Identifiable, Hashable {
 		child_count: Int,
 		hot_rank: Int
 	) {
-		self.id = id
 		self.comment_id = comment_id
 		self.score = score
 		self.upvotes = upvotes
