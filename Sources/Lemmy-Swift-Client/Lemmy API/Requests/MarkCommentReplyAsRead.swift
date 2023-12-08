@@ -6,24 +6,24 @@ public struct MarkCommentReplyAsReadRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/mark_as_read"
 
-	public let comment_reply_id: CommentReplyId
+	public let commentReplyId: CommentReplyId
 	public let read: Bool
 
 	public init(
-		comment_reply_id: CommentReplyId,
+		commentReplyId: CommentReplyId,
 		read: Bool
 	) {
-		self.comment_reply_id = comment_reply_id
+		self.commentReplyId = commentReplyId
 		self.read = read
 	}
 }
 
 public struct CommentReplyResponse: APIResponse {
-	public let comment_reply_view: CommentReplyView
+	public let commentReplyView: CommentReplyView
 
 	public init(
-		comment_reply_view: CommentReplyView
+		commentReplyView: CommentReplyView
 	) {
-		self.comment_reply_view = comment_reply_view
+		self.commentReplyView = commentReplyView
 	}
 }

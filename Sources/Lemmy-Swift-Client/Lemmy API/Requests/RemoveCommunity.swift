@@ -6,16 +6,16 @@ public struct RemoveCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/remove"
 
-	public let community_id: CommunityId
+	public let communityId: CommunityId
 	public let removed: Bool
 	public let reason: String?
 
 	public init(
-		community_id: CommunityId,
+		communityId: CommunityId,
 		removed: Bool,
 		reason: String? = nil
 	) {
-		self.community_id = community_id
+		self.communityId = communityId
 		self.removed = removed
 		self.reason = reason
 	}

@@ -6,14 +6,14 @@ public struct DistinguishCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/distinguish"
 
-	public let comment_id: CommentId
+	public let commentId: CommentId
 	public let distinguished: Bool
 
 	public init(
-		comment_id: CommentId,
+		commentId: CommentId,
 		distinguished: Bool
 	) {
-		self.comment_id = comment_id
+		self.commentId = commentId
 		self.distinguished = distinguished
 	}
 }

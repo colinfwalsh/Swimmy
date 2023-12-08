@@ -7,13 +7,13 @@ public struct DeleteAccountRequest: APIRequest {
 	public static let path: String = "/user/delete_account"
 
 	public let password: String
-	public let delete_content: Bool
+	public let deleteContent: Bool
 
 	public init(
 		password: String,
-		delete_content: Bool
+		deleteContent: Bool
 	) {
 		self.password = password
-		self.delete_content = delete_content
+		self.deleteContent = deleteContent
 	}
 }

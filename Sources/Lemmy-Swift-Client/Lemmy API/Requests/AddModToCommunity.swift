@@ -6,17 +6,17 @@ public struct AddModToCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/mod"
 
-	public let community_id: CommunityId
-	public let person_id: PersonId
+	public let communityId: CommunityId
+	public let personId: PersonId
 	public let added: Bool
 
 	public init(
-		community_id: CommunityId,
-		person_id: PersonId,
+		communityId: CommunityId,
+		personId: PersonId,
 		added: Bool
 	) {
-		self.community_id = community_id
-		self.person_id = person_id
+		self.communityId = communityId
+		self.personId = personId
 		self.added = added
 	}
 }

@@ -7,20 +7,20 @@ public struct GetPersonMentionsRequest: APIRequest {
 	public static let path: String = "/user/mention"
 
 	public let sort: CommentSortType?
-	public let page: /* integer */ number?
-	public let limit: /* integer */ number?
-	public let unread_only: Bool?
+	public let page: Int?
+	public let limit: Int?
+	public let unreadOnly: Bool?
 
 	public init(
 		sort: CommentSortType? = nil,
-		page: /* integer */ number? = nil,
-		limit: /* integer */ number? = nil,
-		unread_only: Bool? = nil
+		page: Int? = nil,
+		limit: Int? = nil,
+		unreadOnly: Bool? = nil
 	) {
 		self.sort = sort
 		self.page = page
 		self.limit = limit
-		self.unread_only = unread_only
+		self.unreadOnly = unreadOnly
 	}
 }
 

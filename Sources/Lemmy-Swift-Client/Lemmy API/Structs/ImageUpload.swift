@@ -1,20 +1,20 @@
 import Foundation
 
 public struct ImageUpload: Codable, Hashable {
-	public let local_user_id: LocalUserId
-	public let pictrs_alias: String
-	public let pictrs_delete_token: String
+	public let localUserId: LocalUserId
+	public let pictrsAlias: String
+	public let pictrsDeleteToken: String
 	public let published: String
 
 	public init(
-		local_user_id: LocalUserId,
-		pictrs_alias: String,
-		pictrs_delete_token: String,
+		localUserId: LocalUserId,
+		pictrsAlias: String,
+		pictrsDeleteToken: String,
 		published: String
 	) {
-		self.local_user_id = local_user_id
-		self.pictrs_alias = pictrs_alias
-		self.pictrs_delete_token = pictrs_delete_token
+		self.localUserId = localUserId
+		self.pictrsAlias = pictrsAlias
+		self.pictrsDeleteToken = pictrsDeleteToken
 		self.published = published
 	}
 }

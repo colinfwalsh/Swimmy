@@ -6,30 +6,30 @@ public struct ListCommentReportsRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/comment/report/list"
 
-	public let page: /* integer */ number?
-	public let limit: /* integer */ number?
-	public let unresolved_only: Bool?
-	public let community_id: CommunityId?
+	public let page: Int?
+	public let limit: Int?
+	public let unresolvedOnly: Bool?
+	public let communityId: CommunityId?
 
 	public init(
-		page: /* integer */ number? = nil,
-		limit: /* integer */ number? = nil,
-		unresolved_only: Bool? = nil,
-		community_id: CommunityId? = nil
+		page: Int? = nil,
+		limit: Int? = nil,
+		unresolvedOnly: Bool? = nil,
+		communityId: CommunityId? = nil
 	) {
 		self.page = page
 		self.limit = limit
-		self.unresolved_only = unresolved_only
-		self.community_id = community_id
+		self.unresolvedOnly = unresolvedOnly
+		self.communityId = communityId
 	}
 }
 
 public struct ListCommentReportsResponse: APIResponse {
-	public let comment_reports: [CommentReportView]
+	public let commentReports: [CommentReportView]
 
 	public init(
-		comment_reports: [CommentReportView]
+		commentReports: [CommentReportView]
 	) {
-		self.comment_reports = comment_reports
+		self.commentReports = commentReports
 	}
 }

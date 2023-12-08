@@ -1,11 +1,11 @@
 import Foundation
 
 public struct GenerateTotpSecretResponse: Codable, Hashable {
-	public let totp_secret_url: String
+	public let totpSecretUrl: String
 
 	public init(
-		totp_secret_url: String
+		totpSecretUrl: String
 	) {
-		self.totp_secret_url = totp_secret_url
+		self.totpSecretUrl = totpSecretUrl
 	}
 }

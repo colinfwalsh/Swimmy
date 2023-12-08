@@ -6,30 +6,30 @@ public struct GetReportCountRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/user/report_count"
 
-	public let community_id: CommunityId?
+	public let communityId: CommunityId?
 
 	public init(
-		community_id: CommunityId? = nil
+		communityId: CommunityId? = nil
 	) {
-		self.community_id = community_id
+		self.communityId = communityId
 	}
 }
 
 public struct GetReportCountResponse: APIResponse {
-	public let community_id: CommunityId?
-	public let comment_reports: /* integer */ number
-	public let post_reports: /* integer */ number
-	public let private_message_reports: /* integer */ number?
+	public let communityId: CommunityId?
+	public let commentReports: Int
+	public let postReports: Int
+	public let privateMessageReports: Int?
 
 	public init(
-		community_id: CommunityId? = nil,
-		comment_reports: /* integer */ number,
-		post_reports: /* integer */ number,
-		private_message_reports: /* integer */ number? = nil
+		communityId: CommunityId? = nil,
+		commentReports: Int,
+		postReports: Int,
+		privateMessageReports: Int? = nil
 	) {
-		self.community_id = community_id
-		self.comment_reports = comment_reports
-		self.post_reports = post_reports
-		self.private_message_reports = private_message_reports
+		self.communityId = communityId
+		self.commentReports = commentReports
+		self.postReports = postReports
+		self.privateMessageReports = privateMessageReports
 	}
 }

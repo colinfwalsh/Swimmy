@@ -6,14 +6,14 @@ public struct TransferCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/transfer"
 
-	public let community_id: CommunityId
-	public let person_id: PersonId
+	public let communityId: CommunityId
+	public let personId: PersonId
 
 	public init(
-		community_id: CommunityId,
-		person_id: PersonId
+		communityId: CommunityId,
+		personId: PersonId
 	) {
-		self.community_id = community_id
-		self.person_id = person_id
+		self.communityId = communityId
+		self.personId = personId
 	}
 }

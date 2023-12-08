@@ -6,27 +6,27 @@ public struct BlockCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/block"
 
-	public let community_id: CommunityId
+	public let communityId: CommunityId
 	public let block: Bool
 
 	public init(
-		community_id: CommunityId,
+		communityId: CommunityId,
 		block: Bool
 	) {
-		self.community_id = community_id
+		self.communityId = communityId
 		self.block = block
 	}
 }
 
 public struct BlockCommunityResponse: APIResponse {
-	public let community_view: CommunityView
+	public let communityView: CommunityView
 	public let blocked: Bool
 
 	public init(
-		community_view: CommunityView,
+		communityView: CommunityView,
 		blocked: Bool
 	) {
-		self.community_view = community_view
+		self.communityView = communityView
 		self.blocked = blocked
 	}
 }

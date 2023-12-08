@@ -6,14 +6,14 @@ public struct AddAdminRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/admin/add"
 
-	public let person_id: PersonId
+	public let personId: PersonId
 	public let added: Bool
 
 	public init(
-		person_id: PersonId,
+		personId: PersonId,
 		added: Bool
 	) {
-		self.person_id = person_id
+		self.personId = personId
 		self.added = added
 	}
 }

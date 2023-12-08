@@ -6,14 +6,14 @@ public struct FollowCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/follow"
 
-	public let community_id: CommunityId
+	public let communityId: CommunityId
 	public let follow: Bool
 
 	public init(
-		community_id: CommunityId,
+		communityId: CommunityId,
 		follow: Bool
 	) {
-		self.community_id = community_id
+		self.communityId = communityId
 		self.follow = follow
 	}
 }

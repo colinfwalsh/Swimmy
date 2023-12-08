@@ -1,17 +1,17 @@
 import Foundation
 
 public struct GetUnreadCountResponse: Codable, Hashable {
-	public let replies: /* integer */ number
-	public let mentions: /* integer */ number
-	public let private_messages: /* integer */ number
+	public let replies: Int
+	public let mentions: Int
+	public let privateMessages: Int
 
 	public init(
-		replies: /* integer */ number,
-		mentions: /* integer */ number,
-		private_messages: /* integer */ number
+		replies: Int,
+		mentions: Int,
+		privateMessages: Int
 	) {
 		self.replies = replies
 		self.mentions = mentions
-		self.private_messages = private_messages
+		self.privateMessages = privateMessages
 	}
 }

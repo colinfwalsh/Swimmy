@@ -1,26 +1,26 @@
 import Foundation
 
 public struct CommentAggregates: Codable, Hashable {
-	public let comment_id: CommentId
-	public let score: /* integer */ number
-	public let upvotes: /* integer */ number
-	public let downvotes: /* integer */ number
+	public let commentId: CommentId
+	public let score: Int
+	public let upvotes: Int
+	public let downvotes: Int
 	public let published: String
-	public let child_count: Int
+	public let childCount: Int
 
 	public init(
-		comment_id: CommentId,
-		score: /* integer */ number,
-		upvotes: /* integer */ number,
-		downvotes: /* integer */ number,
+		commentId: CommentId,
+		score: Int,
+		upvotes: Int,
+		downvotes: Int,
 		published: String,
-		child_count: Int
+		childCount: Int
 	) {
-		self.comment_id = comment_id
+		self.commentId = commentId
 		self.score = score
 		self.upvotes = upvotes
 		self.downvotes = downvotes
 		self.published = published
-		self.child_count = child_count
+		self.childCount = childCount
 	}
 }
