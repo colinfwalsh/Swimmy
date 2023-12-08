@@ -1,38 +1,35 @@
 import Foundation
 
-public struct SiteAggregates: Codable, Identifiable, Hashable {
-	public let id: Int
-	public let site_id: SiteId
-	public let users: Int
-	public let posts: Int
-	public let comments: Int
-	public let communities: Int
-	public let users_active_day: Int
-	public let users_active_week: Int
-	public let users_active_month: Int
-	public let users_active_half_year: Int
+public struct SiteAggregates: Codable, Hashable {
+	public let siteId: SiteId
+	public let users: /* integer */ number
+	public let posts: /* integer */ number
+	public let comments: /* integer */ number
+	public let communities: /* integer */ number
+	public let usersActiveDay: /* integer */ number
+	public let usersActiveWeek: /* integer */ number
+	public let usersActiveMonth: /* integer */ number
+	public let usersActiveHalfYear: /* integer */ number
 
 	public init(
-		id: Int,
-		site_id: SiteId,
-		users: Int,
-		posts: Int,
-		comments: Int,
-		communities: Int,
-		users_active_day: Int,
-		users_active_week: Int,
-		users_active_month: Int,
-		users_active_half_year: Int
+		siteId: SiteId,
+		users: /* integer */ number,
+		posts: /* integer */ number,
+		comments: /* integer */ number,
+		communities: /* integer */ number,
+		usersActiveDay: /* integer */ number,
+		usersActiveWeek: /* integer */ number,
+		usersActiveMonth: /* integer */ number,
+		usersActiveHalfYear: /* integer */ number
 	) {
-		self.id = id
-		self.site_id = site_id
+		self.siteId = siteId
 		self.users = users
 		self.posts = posts
 		self.comments = comments
 		self.communities = communities
-		self.users_active_day = users_active_day
-		self.users_active_week = users_active_week
-		self.users_active_month = users_active_month
-		self.users_active_half_year = users_active_half_year
+		self.usersActiveDay = usersActiveDay
+		self.usersActiveWeek = usersActiveWeek
+		self.usersActiveMonth = usersActiveMonth
+		self.usersActiveHalfYear = usersActiveHalfYear
 	}
 }

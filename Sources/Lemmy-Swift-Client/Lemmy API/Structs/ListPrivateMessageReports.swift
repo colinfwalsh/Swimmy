@@ -1,20 +1,17 @@
 import Foundation
 
 public struct ListPrivateMessageReports: Codable, Hashable {
-	public let page: Int?
-	public let limit: Int?
-	public let unresolved_only: Bool?
-	public let auth: String
+	public let page: /* integer */ number?
+	public let limit: /* integer */ number?
+	public let unresolvedOnly: Bool?
 
 	public init(
-		page: Int? = nil,
-		limit: Int? = nil,
-		unresolved_only: Bool? = nil,
-		auth: String
+		page: /* integer */ number? = nil,
+		limit: /* integer */ number? = nil,
+		unresolvedOnly: Bool? = nil
 	) {
 		self.page = page
 		self.limit = limit
-		self.unresolved_only = unresolved_only
-		self.auth = auth
+		self.unresolvedOnly = unresolvedOnly
 	}
 }

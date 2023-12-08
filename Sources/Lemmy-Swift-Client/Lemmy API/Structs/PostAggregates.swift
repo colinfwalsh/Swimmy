@@ -1,26 +1,22 @@
 import Foundation
 
-public struct PostAggregates: Codable, Identifiable, Hashable {
-	public var id: Int {
-		return post_id
-	}
-
-	public let post_id: PostId
-	public let comments: Int
-	public let score: Int
-	public let upvotes: Int
-	public let downvotes: Int
+public struct PostAggregates: Codable, Hashable {
+	public let postId: PostId
+	public let comments: /* integer */ number
+	public let score: /* integer */ number
+	public let upvotes: /* integer */ number
+	public let downvotes: /* integer */ number
 	public let published: String
 
 	public init(
-		post_id: PostId,
-		comments: Int,
-		score: Int,
-		upvotes: Int,
-		downvotes: Int,
+		postId: PostId,
+		comments: /* integer */ number,
+		score: /* integer */ number,
+		upvotes: /* integer */ number,
+		downvotes: /* integer */ number,
 		published: String
 	) {
-		self.post_id = post_id
+		self.postId = postId
 		self.comments = comments
 		self.score = score
 		self.upvotes = upvotes

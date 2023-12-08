@@ -71,7 +71,8 @@ public class LemmyAPI {
 
 		// Decode Response
 		let decoder = JSONDecoder()
-
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
 		do {
 			let decodedResult = try decoder.decode(T.Response.self, from: data)
 			return (decodedResult, response, data)
@@ -91,7 +92,10 @@ public class LemmyAPI {
 			return Fail(error: NSError(domain: "Could not complete the request", code: 400))
 				.eraseToAnyPublisher()
 		}
-
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
 		return URLSession
 			.shared
 			.dataTaskPublisher(for: request)
@@ -103,7 +107,7 @@ public class LemmyAPI {
 				}
 				return element.data
 			}
-			.decode(type: T.Response.self, decoder: JSONDecoder())
+			.decode(type: T.Response.self, decoder: decoder)
 			.eraseToAnyPublisher()
 	}
 }
