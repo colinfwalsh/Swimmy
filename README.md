@@ -1,11 +1,12 @@
-# Lemmy-Swift-Client
+# Swimmy
 
-A Swift client for [Lemmy](https://join-lemmy.org).
+A Swift client for [Lemmy](https://join-lemmy.org).  Fork of [https://github.com/rrainn/Lemmy-Swift-Client].
 
 ## Features
 
 - Fully Swift type safe
 - `async`/`await` compatible
+- Combine support
 - Supports [all Lemmy API endpoints](https://join-lemmy.org/api/classes/LemmyHttp.html)
 - Uses Codable for easy JSON serialization/deserialization
 
@@ -42,8 +43,6 @@ if let url = URL(string: "https://eventfrontier.com/api/v3") {
 	}
 }
 ```
-
-Luckily this just scratches the surface of what you can do with the Lemmy Swift Client. For more information checkout our [documentation](https://rrainn.github.io/Lemmy-Swift-Client/documentation/lemmy_swift_client/).
 
 ## Contributing
 
