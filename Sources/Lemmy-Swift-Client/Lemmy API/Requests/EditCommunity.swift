@@ -6,32 +6,32 @@ public struct EditCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/community"
 
-	public let communityId: CommunityId
+	public let community_id: CommunityId
 	public let title: String?
 	public let description: String?
 	public let icon: String?
 	public let banner: String?
 	public let nsfw: Bool?
-	public let postingRestrictedToMods: Bool?
-	public let discussionLanguages: [LanguageId]?
+	public let posting_restricted_to_mods: Bool?
+	public let discussion_languages: [LanguageId]?
 
 	public init(
-		communityId: CommunityId,
+		community_id: CommunityId,
 		title: String? = nil,
 		description: String? = nil,
 		icon: String? = nil,
 		banner: String? = nil,
 		nsfw: Bool? = nil,
-		postingRestrictedToMods: Bool? = nil,
-		discussionLanguages: [LanguageId]? = nil
+		posting_restricted_to_mods: Bool? = nil,
+		discussion_languages: [LanguageId]? = nil
 	) {
-		self.communityId = communityId
+		self.community_id = community_id
 		self.title = title
 		self.description = description
 		self.icon = icon
 		self.banner = banner
 		self.nsfw = nsfw
-		self.postingRestrictedToMods = postingRestrictedToMods
-		self.discussionLanguages = discussionLanguages
+		self.posting_restricted_to_mods = posting_restricted_to_mods
+		self.discussion_languages = discussion_languages
 	}
 }

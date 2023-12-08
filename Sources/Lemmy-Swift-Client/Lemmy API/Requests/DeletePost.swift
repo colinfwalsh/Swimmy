@@ -6,14 +6,14 @@ public struct DeletePostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/delete"
 
-	public let postId: PostId
+	public let post_id: PostId
 	public let deleted: Bool
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		deleted: Bool
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.deleted = deleted
 	}
 }

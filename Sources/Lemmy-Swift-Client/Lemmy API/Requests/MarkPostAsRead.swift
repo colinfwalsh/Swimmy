@@ -6,17 +6,17 @@ public struct MarkPostAsReadRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/mark_as_read"
 
-	public let postId: PostId?
-	public let postIds: [PostId]?
+	public let post_id: PostId?
+	public let post_ids: [PostId]?
 	public let read: Bool
 
 	public init(
-		postId: PostId? = nil,
-		postIds: [PostId]? = nil,
+		post_id: PostId? = nil,
+		post_ids: [PostId]? = nil,
 		read: Bool
 	) {
-		self.postId = postId
-		self.postIds = postIds
+		self.post_id = post_id
+		self.post_ids = post_ids
 		self.read = read
 	}
 }

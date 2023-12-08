@@ -7,23 +7,23 @@ public struct CreatePrivateMessageRequest: APIRequest {
 	public static let path: String = "/private_message"
 
 	public let content: String
-	public let recipientId: PersonId
+	public let recipient_id: PersonId
 
 	public init(
 		content: String,
-		recipientId: PersonId
+		recipient_id: PersonId
 	) {
 		self.content = content
-		self.recipientId = recipientId
+		self.recipient_id = recipient_id
 	}
 }
 
 public struct PrivateMessageResponse: APIResponse {
-	public let privateMessageView: PrivateMessageView
+	public let private_message_view: PrivateMessageView
 
 	public init(
-		privateMessageView: PrivateMessageView
+		private_message_view: PrivateMessageView
 	) {
-		self.privateMessageView = privateMessageView
+		self.private_message_view = private_message_view
 	}
 }

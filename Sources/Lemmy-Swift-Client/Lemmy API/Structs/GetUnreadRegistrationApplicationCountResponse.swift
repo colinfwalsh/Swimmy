@@ -1,11 +1,11 @@
 import Foundation
 
 public struct GetUnreadRegistrationApplicationCountResponse: Codable, Hashable {
-	public let registrationApplications: /* integer */ number
+	public let registration_applications: /* integer */ number
 
 	public init(
-		registrationApplications: /* integer */ number
+		registration_applications: /* integer */ number
 	) {
-		self.registrationApplications = registrationApplications
+		self.registration_applications = registration_applications
 	}
 }

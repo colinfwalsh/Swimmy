@@ -1,14 +1,14 @@
 import Foundation
 
 public struct ResolvePrivateMessageReport: Codable, Hashable {
-	public let reportId: PrivateMessageReportId
+	public let report_id: PrivateMessageReportId
 	public let resolved: Bool
 
 	public init(
-		reportId: PrivateMessageReportId,
+		report_id: PrivateMessageReportId,
 		resolved: Bool
 	) {
-		self.reportId = reportId
+		self.report_id = report_id
 		self.resolved = resolved
 	}
 }

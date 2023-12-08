@@ -19,20 +19,20 @@ public struct GetCommunityRequest: APIRequest {
 }
 
 public struct GetCommunityResponse: APIResponse {
-	public let communityView: CommunityView
+	public let community_view: CommunityView
 	public let site: Site?
 	public let moderators: [CommunityModeratorView]
-	public let discussionLanguages: [LanguageId]
+	public let discussion_languages: [LanguageId]
 
 	public init(
-		communityView: CommunityView,
+		community_view: CommunityView,
 		site: Site? = nil,
 		moderators: [CommunityModeratorView],
-		discussionLanguages: [LanguageId]
+		discussion_languages: [LanguageId]
 	) {
-		self.communityView = communityView
+		self.community_view = community_view
 		self.site = site
 		self.moderators = moderators
-		self.discussionLanguages = discussionLanguages
+		self.discussion_languages = discussion_languages
 	}
 }

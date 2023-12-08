@@ -12,8 +12,8 @@ public struct CreateCommunityRequest: APIRequest {
 	public let icon: String?
 	public let banner: String?
 	public let nsfw: Bool?
-	public let postingRestrictedToMods: Bool?
-	public let discussionLanguages: [LanguageId]?
+	public let posting_restricted_to_mods: Bool?
+	public let discussion_languages: [LanguageId]?
 
 	public init(
 		name: String,
@@ -22,8 +22,8 @@ public struct CreateCommunityRequest: APIRequest {
 		icon: String? = nil,
 		banner: String? = nil,
 		nsfw: Bool? = nil,
-		postingRestrictedToMods: Bool? = nil,
-		discussionLanguages: [LanguageId]? = nil
+		posting_restricted_to_mods: Bool? = nil,
+		discussion_languages: [LanguageId]? = nil
 	) {
 		self.name = name
 		self.title = title
@@ -31,20 +31,20 @@ public struct CreateCommunityRequest: APIRequest {
 		self.icon = icon
 		self.banner = banner
 		self.nsfw = nsfw
-		self.postingRestrictedToMods = postingRestrictedToMods
-		self.discussionLanguages = discussionLanguages
+		self.posting_restricted_to_mods = posting_restricted_to_mods
+		self.discussion_languages = discussion_languages
 	}
 }
 
 public struct CommunityResponse: APIResponse {
-	public let communityView: CommunityView
-	public let discussionLanguages: [LanguageId]
+	public let community_view: CommunityView
+	public let discussion_languages: [LanguageId]
 
 	public init(
-		communityView: CommunityView,
-		discussionLanguages: [LanguageId]
+		community_view: CommunityView,
+		discussion_languages: [LanguageId]
 	) {
-		self.communityView = communityView
-		self.discussionLanguages = discussionLanguages
+		self.community_view = community_view
+		self.discussion_languages = discussion_languages
 	}
 }

@@ -6,14 +6,14 @@ public struct DeleteCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/delete"
 
-	public let communityId: CommunityId
+	public let community_id: CommunityId
 	public let deleted: Bool
 
 	public init(
-		communityId: CommunityId,
+		community_id: CommunityId,
 		deleted: Bool
 	) {
-		self.communityId = communityId
+		self.community_id = community_id
 		self.deleted = deleted
 	}
 }

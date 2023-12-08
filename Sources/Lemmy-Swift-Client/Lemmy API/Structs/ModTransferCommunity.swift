@@ -2,22 +2,22 @@ import Foundation
 
 public struct ModTransferCommunity: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let modPersonId: PersonId
-	public let otherPersonId: PersonId
-	public let communityId: CommunityId
-	public let when: String
+	public let mod_person_id: PersonId
+	public let other_person_id: PersonId
+	public let community_id: CommunityId
+	public let when_: String
 
 	public init(
 		id: Int,
-		modPersonId: PersonId,
-		otherPersonId: PersonId,
-		communityId: CommunityId,
-		when: String
+		mod_person_id: PersonId,
+		other_person_id: PersonId,
+		community_id: CommunityId,
+		when_: String
 	) {
 		self.id = id
-		self.modPersonId = modPersonId
-		self.otherPersonId = otherPersonId
-		self.communityId = communityId
-		self.when = when
+		self.mod_person_id = mod_person_id
+		self.other_person_id = other_person_id
+		self.community_id = community_id
+		self.when_ = when_
 	}
 }

@@ -1,11 +1,11 @@
 import Foundation
 
 public struct GetFederatedInstancesResponse: Codable, Hashable {
-	public let federatedInstances: FederatedInstances?
+	public let federated_instances: FederatedInstances?
 
 	public init(
-		federatedInstances: FederatedInstances? = nil
+		federated_instances: FederatedInstances? = nil
 	) {
-		self.federatedInstances = federatedInstances
+		self.federated_instances = federated_instances
 	}
 }

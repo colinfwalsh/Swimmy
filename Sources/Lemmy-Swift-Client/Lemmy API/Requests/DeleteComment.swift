@@ -6,14 +6,14 @@ public struct DeleteCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/delete"
 
-	public let commentId: CommentId
+	public let comment_id: CommentId
 	public let deleted: Bool
 
 	public init(
-		commentId: CommentId,
+		comment_id: CommentId,
 		deleted: Bool
 	) {
-		self.commentId = commentId
+		self.comment_id = comment_id
 		self.deleted = deleted
 	}
 }

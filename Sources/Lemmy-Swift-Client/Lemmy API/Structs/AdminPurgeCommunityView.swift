@@ -1,14 +1,14 @@
 import Foundation
 
 public struct AdminPurgeCommunityView: Codable, Hashable {
-	public let adminPurgeCommunity: AdminPurgeCommunity
+	public let admin_purge_community: AdminPurgeCommunity
 	public let admin: Person?
 
 	public init(
-		adminPurgeCommunity: AdminPurgeCommunity,
+		admin_purge_community: AdminPurgeCommunity,
 		admin: Person? = nil
 	) {
-		self.adminPurgeCommunity = adminPurgeCommunity
+		self.admin_purge_community = admin_purge_community
 		self.admin = admin
 	}
 }

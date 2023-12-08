@@ -1,16 +1,16 @@
 import Foundation
 
 public struct LocalUserView: Codable, Hashable {
-	public let localUser: LocalUser
+	public let local_user: LocalUser
 	public let person: Person
 	public let counts: PersonAggregates
 
 	public init(
-		localUser: LocalUser,
+		local_user: LocalUser,
 		person: Person,
 		counts: PersonAggregates
 	) {
-		self.localUser = localUser
+		self.local_user = local_user
 		self.person = person
 		self.counts = counts
 	}

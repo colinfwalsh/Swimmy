@@ -6,14 +6,14 @@ public struct CreatePostLikeRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/like"
 
-	public let postId: PostId
+	public let post_id: PostId
 	public let score: Int
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		score: Int
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.score = score
 	}
 }

@@ -1,20 +1,20 @@
 import Foundation
 
 public struct ModTransferCommunityView: Codable, Hashable {
-	public let modTransferCommunity: ModTransferCommunity
+	public let mod_transfer_community: ModTransferCommunity
 	public let moderator: Person?
 	public let community: Community
-	public let moddedPerson: Person
+	public let modded_person: Person
 
 	public init(
-		modTransferCommunity: ModTransferCommunity,
+		mod_transfer_community: ModTransferCommunity,
 		moderator: Person? = nil,
 		community: Community,
-		moddedPerson: Person
+		modded_person: Person
 	) {
-		self.modTransferCommunity = modTransferCommunity
+		self.mod_transfer_community = mod_transfer_community
 		self.moderator = moderator
 		self.community = community
-		self.moddedPerson = moddedPerson
+		self.modded_person = modded_person
 	}
 }

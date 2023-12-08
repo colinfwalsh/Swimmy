@@ -6,26 +6,26 @@ public struct EditPostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/post"
 
-	public let postId: PostId
+	public let post_id: PostId
 	public let name: String?
 	public let url: String?
 	public let body: String?
 	public let nsfw: Bool?
-	public let languageId: LanguageId?
+	public let language_id: LanguageId?
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		name: String? = nil,
 		url: String? = nil,
 		body: String? = nil,
 		nsfw: Bool? = nil,
-		languageId: LanguageId? = nil
+		language_id: LanguageId? = nil
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.name = name
 		self.url = url
 		self.body = body
 		self.nsfw = nsfw
-		self.languageId = languageId
+		self.language_id = language_id
 	}
 }

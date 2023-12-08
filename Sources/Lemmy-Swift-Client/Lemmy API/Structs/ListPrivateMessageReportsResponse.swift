@@ -1,11 +1,11 @@
 import Foundation
 
 public struct ListPrivateMessageReportsResponse: Codable, Hashable {
-	public let privateMessageReports: [PrivateMessageReportView]
+	public let private_message_reports: [PrivateMessageReportView]
 
 	public init(
-		privateMessageReports: [PrivateMessageReportView]
+		private_message_reports: [PrivateMessageReportView]
 	) {
-		self.privateMessageReports = privateMessageReports
+		self.private_message_reports = private_message_reports
 	}
 }

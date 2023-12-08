@@ -6,14 +6,14 @@ public struct CreateCommentLikeRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/like"
 
-	public let commentId: CommentId
+	public let comment_id: CommentId
 	public let score: Int
 
 	public init(
-		commentId: CommentId,
+		comment_id: CommentId,
 		score: Int
 	) {
-		self.commentId = commentId
+		self.comment_id = comment_id
 		self.score = score
 	}
 }

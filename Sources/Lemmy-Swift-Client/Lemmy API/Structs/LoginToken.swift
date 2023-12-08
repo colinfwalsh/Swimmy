@@ -1,20 +1,20 @@
 import Foundation
 
 public struct LoginToken: Codable, Hashable {
-	public let userId: LocalUserId
+	public let user_id: LocalUserId
 	public let published: String
 	public let ip: String?
-	public let userAgent: String?
+	public let user_agent: String?
 
 	public init(
-		userId: LocalUserId,
+		user_id: LocalUserId,
 		published: String,
 		ip: String? = nil,
-		userAgent: String? = nil
+		user_agent: String? = nil
 	) {
-		self.userId = userId
+		self.user_id = user_id
 		self.published = published
 		self.ip = ip
-		self.userAgent = userAgent
+		self.user_agent = user_agent
 	}
 }

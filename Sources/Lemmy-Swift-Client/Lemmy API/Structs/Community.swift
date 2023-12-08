@@ -10,13 +10,13 @@ public struct Community: Codable, Identifiable, Hashable {
 	public let updated: String?
 	public let deleted: Bool
 	public let nsfw: Bool
-	public let actorId: String
+	public let actor_id: String
 	public let local: Bool
 	public let icon: String?
 	public let banner: String?
 	public let hidden: Bool
-	public let postingRestrictedToMods: Bool
-	public let instanceId: InstanceId
+	public let posting_restricted_to_mods: Bool
+	public let instance_id: InstanceId
 
 	public init(
 		id: CommunityId,
@@ -28,13 +28,13 @@ public struct Community: Codable, Identifiable, Hashable {
 		updated: String? = nil,
 		deleted: Bool,
 		nsfw: Bool,
-		actorId: String,
+		actor_id: String,
 		local: Bool,
 		icon: String? = nil,
 		banner: String? = nil,
 		hidden: Bool,
-		postingRestrictedToMods: Bool,
-		instanceId: InstanceId
+		posting_restricted_to_mods: Bool,
+		instance_id: InstanceId
 	) {
 		self.id = id
 		self.name = name
@@ -45,12 +45,12 @@ public struct Community: Codable, Identifiable, Hashable {
 		self.updated = updated
 		self.deleted = deleted
 		self.nsfw = nsfw
-		self.actorId = actorId
+		self.actor_id = actor_id
 		self.local = local
 		self.icon = icon
 		self.banner = banner
 		self.hidden = hidden
-		self.postingRestrictedToMods = postingRestrictedToMods
-		self.instanceId = instanceId
+		self.posting_restricted_to_mods = posting_restricted_to_mods
+		self.instance_id = instance_id
 	}
 }

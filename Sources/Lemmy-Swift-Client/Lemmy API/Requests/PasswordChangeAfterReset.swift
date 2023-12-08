@@ -8,15 +8,15 @@ public struct PasswordChangeAfterResetRequest: APIRequest {
 
 	public let token: String
 	public let password: String
-	public let passwordVerify: String
+	public let password_verify: String
 
 	public init(
 		token: String,
 		password: String,
-		passwordVerify: String
+		password_verify: String
 	) {
 		self.token = token
 		self.password = password
-		self.passwordVerify = passwordVerify
+		self.password_verify = password_verify
 	}
 }

@@ -6,24 +6,24 @@ public struct CreateCommentReportRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/report"
 
-	public let commentId: CommentId
+	public let comment_id: CommentId
 	public let reason: String
 
 	public init(
-		commentId: CommentId,
+		comment_id: CommentId,
 		reason: String
 	) {
-		self.commentId = commentId
+		self.comment_id = comment_id
 		self.reason = reason
 	}
 }
 
 public struct CommentReportResponse: APIResponse {
-	public let commentReportView: CommentReportView
+	public let comment_report_view: CommentReportView
 
 	public init(
-		commentReportView: CommentReportView
+		comment_report_view: CommentReportView
 	) {
-		self.commentReportView = commentReportView
+		self.comment_report_view = comment_report_view
 	}
 }

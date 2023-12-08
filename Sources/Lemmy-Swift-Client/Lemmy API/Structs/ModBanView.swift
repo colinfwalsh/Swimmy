@@ -1,17 +1,17 @@
 import Foundation
 
 public struct ModBanView: Codable, Hashable {
-	public let modBan: ModBan
+	public let mod_ban: ModBan
 	public let moderator: Person?
-	public let bannedPerson: Person
+	public let banned_person: Person
 
 	public init(
-		modBan: ModBan,
+		mod_ban: ModBan,
 		moderator: Person? = nil,
-		bannedPerson: Person
+		banned_person: Person
 	) {
-		self.modBan = modBan
+		self.mod_ban = mod_ban
 		self.moderator = moderator
-		self.bannedPerson = bannedPerson
+		self.banned_person = banned_person
 	}
 }

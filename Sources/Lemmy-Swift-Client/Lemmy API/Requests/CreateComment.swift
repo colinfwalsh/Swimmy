@@ -7,32 +7,32 @@ public struct CreateCommentRequest: APIRequest {
 	public static let path: String = "/comment"
 
 	public let content: String
-	public let postId: PostId
-	public let parentId: CommentId?
-	public let languageId: LanguageId?
+	public let post_id: PostId
+	public let parent_id: CommentId?
+	public let language_id: LanguageId?
 
 	public init(
 		content: String,
-		postId: PostId,
-		parentId: CommentId? = nil,
-		languageId: LanguageId? = nil
+		post_id: PostId,
+		parent_id: CommentId? = nil,
+		language_id: LanguageId? = nil
 	) {
 		self.content = content
-		self.postId = postId
-		self.parentId = parentId
-		self.languageId = languageId
+		self.post_id = post_id
+		self.parent_id = parent_id
+		self.language_id = language_id
 	}
 }
 
 public struct CommentResponse: APIResponse {
-	public let commentView: CommentView
-	public let recipientIds: [LocalUserId]
+	public let comment_view: CommentView
+	public let recipient_ids: [LocalUserId]
 
 	public init(
-		commentView: CommentView,
-		recipientIds: [LocalUserId]
+		comment_view: CommentView,
+		recipient_ids: [LocalUserId]
 	) {
-		self.commentView = commentView
-		self.recipientIds = recipientIds
+		self.comment_view = comment_view
+		self.recipient_ids = recipient_ids
 	}
 }

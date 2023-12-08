@@ -2,25 +2,25 @@ import Foundation
 
 public struct RegistrationApplication: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let localUserId: LocalUserId
+	public let local_user_id: LocalUserId
 	public let answer: String
-	public let adminId: PersonId?
-	public let denyReason: String?
+	public let admin_id: PersonId?
+	public let deny_reason: String?
 	public let published: String
 
 	public init(
 		id: Int,
-		localUserId: LocalUserId,
+		local_user_id: LocalUserId,
 		answer: String,
-		adminId: PersonId? = nil,
-		denyReason: String? = nil,
+		admin_id: PersonId? = nil,
+		deny_reason: String? = nil,
 		published: String
 	) {
 		self.id = id
-		self.localUserId = localUserId
+		self.local_user_id = local_user_id
 		self.answer = answer
-		self.adminId = adminId
-		self.denyReason = denyReason
+		self.admin_id = admin_id
+		self.deny_reason = deny_reason
 		self.published = published
 	}
 }

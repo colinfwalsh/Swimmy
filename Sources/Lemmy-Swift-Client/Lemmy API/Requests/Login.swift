@@ -6,17 +6,17 @@ public struct LoginRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/login"
 
-	public let usernameOrEmail: String
+	public let username_or_email: String
 	public let password: String
-	public let totp_2faToken: String?
+	public let totp_2fa_token: String?
 
 	public init(
-		usernameOrEmail: String,
+		username_or_email: String,
 		password: String,
-		totp_2faToken: String? = nil
+		totp_2fa_token: String? = nil
 	) {
-		self.usernameOrEmail = usernameOrEmail
+		self.username_or_email = username_or_email
 		self.password = password
-		self.totp_2faToken = totp_2faToken
+		self.totp_2fa_token = totp_2fa_token
 	}
 }

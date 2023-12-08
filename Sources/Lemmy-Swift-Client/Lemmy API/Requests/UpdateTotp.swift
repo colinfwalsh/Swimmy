@@ -6,14 +6,14 @@ public struct UpdateTotpRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/totp/update"
 
-	public let totpToken: String
+	public let totp_token: String
 	public let enabled: Bool
 
 	public init(
-		totpToken: String,
+		totp_token: String,
 		enabled: Bool
 	) {
-		self.totpToken = totpToken
+		self.totp_token = totp_token
 		self.enabled = enabled
 	}
 }

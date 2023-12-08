@@ -1,11 +1,11 @@
 import Foundation
 
 public struct RegistrationApplicationResponse: Codable, Hashable {
-	public let registrationApplication: RegistrationApplicationView
+	public let registration_application: RegistrationApplicationView
 
 	public init(
-		registrationApplication: RegistrationApplicationView
+		registration_application: RegistrationApplicationView
 	) {
-		self.registrationApplication = registrationApplication
+		self.registration_application = registration_application
 	}
 }

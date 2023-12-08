@@ -6,22 +6,22 @@ public struct ListCommunitiesRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/community/list"
 
-	public let type: ListingType?
+	public let type_: ListingType?
 	public let sort: SortType?
-	public let showNsfw: Bool?
+	public let show_nsfw: Bool?
 	public let page: /* integer */ number?
 	public let limit: /* integer */ number?
 
 	public init(
-		type: ListingType? = nil,
+		type_: ListingType? = nil,
 		sort: SortType? = nil,
-		showNsfw: Bool? = nil,
+		show_nsfw: Bool? = nil,
 		page: /* integer */ number? = nil,
 		limit: /* integer */ number? = nil
 	) {
-		self.type = type
+		self.type_ = type_
 		self.sort = sort
-		self.showNsfw = showNsfw
+		self.show_nsfw = show_nsfw
 		self.page = page
 		self.limit = limit
 	}

@@ -1,32 +1,32 @@
 import Foundation
 
 public struct GetSiteResponse: Codable, Hashable {
-	public let siteView: SiteView
+	public let site_view: SiteView
 	public let admins: [PersonView]
 	public let version: String
-	public let myUser: MyUserInfo?
-	public let allLanguages: [Language]
-	public let discussionLanguages: [LanguageId]
+	public let my_user: MyUserInfo?
+	public let all_languages: [Language]
+	public let discussion_languages: [LanguageId]
 	public let taglines: [Tagline]
-	public let customEmojis: [CustomEmojiView]
+	public let custom_emojis: [CustomEmojiView]
 
 	public init(
-		siteView: SiteView,
+		site_view: SiteView,
 		admins: [PersonView],
 		version: String,
-		myUser: MyUserInfo? = nil,
-		allLanguages: [Language],
-		discussionLanguages: [LanguageId],
+		my_user: MyUserInfo? = nil,
+		all_languages: [Language],
+		discussion_languages: [LanguageId],
 		taglines: [Tagline],
-		customEmojis: [CustomEmojiView]
+		custom_emojis: [CustomEmojiView]
 	) {
-		self.siteView = siteView
+		self.site_view = site_view
 		self.admins = admins
 		self.version = version
-		self.myUser = myUser
-		self.allLanguages = allLanguages
-		self.discussionLanguages = discussionLanguages
+		self.my_user = my_user
+		self.all_languages = all_languages
+		self.discussion_languages = discussion_languages
 		self.taglines = taglines
-		self.customEmojis = customEmojis
+		self.custom_emojis = custom_emojis
 	}
 }

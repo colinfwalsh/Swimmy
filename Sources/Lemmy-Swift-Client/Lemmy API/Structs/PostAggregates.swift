@@ -1,7 +1,7 @@
 import Foundation
 
 public struct PostAggregates: Codable, Hashable {
-	public let postId: PostId
+	public let post_id: PostId
 	public let comments: /* integer */ number
 	public let score: /* integer */ number
 	public let upvotes: /* integer */ number
@@ -9,14 +9,14 @@ public struct PostAggregates: Codable, Hashable {
 	public let published: String
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		comments: /* integer */ number,
 		score: /* integer */ number,
 		upvotes: /* integer */ number,
 		downvotes: /* integer */ number,
 		published: String
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.comments = comments
 		self.score = score
 		self.upvotes = upvotes

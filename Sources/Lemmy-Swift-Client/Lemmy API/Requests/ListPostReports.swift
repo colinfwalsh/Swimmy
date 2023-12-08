@@ -8,28 +8,28 @@ public struct ListPostReportsRequest: APIRequest {
 
 	public let page: /* integer */ number?
 	public let limit: /* integer */ number?
-	public let unresolvedOnly: Bool?
-	public let communityId: CommunityId?
+	public let unresolved_only: Bool?
+	public let community_id: CommunityId?
 
 	public init(
 		page: /* integer */ number? = nil,
 		limit: /* integer */ number? = nil,
-		unresolvedOnly: Bool? = nil,
-		communityId: CommunityId? = nil
+		unresolved_only: Bool? = nil,
+		community_id: CommunityId? = nil
 	) {
 		self.page = page
 		self.limit = limit
-		self.unresolvedOnly = unresolvedOnly
-		self.communityId = communityId
+		self.unresolved_only = unresolved_only
+		self.community_id = community_id
 	}
 }
 
 public struct ListPostReportsResponse: APIResponse {
-	public let postReports: [PostReportView]
+	public let post_reports: [PostReportView]
 
 	public init(
-		postReports: [PostReportView]
+		post_reports: [PostReportView]
 	) {
-		self.postReports = postReports
+		self.post_reports = post_reports
 	}
 }

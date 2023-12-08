@@ -1,14 +1,14 @@
 import Foundation
 
 public struct CustomEmojiView: Codable, Hashable {
-	public let customEmoji: CustomEmoji
+	public let custom_emoji: CustomEmoji
 	public let keywords: [CustomEmojiKeyword]
 
 	public init(
-		customEmoji: CustomEmoji,
+		custom_emoji: CustomEmoji,
 		keywords: [CustomEmojiKeyword]
 	) {
-		self.customEmoji = customEmoji
+		self.custom_emoji = custom_emoji
 		self.keywords = keywords
 	}
 }

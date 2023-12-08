@@ -6,14 +6,14 @@ public struct SavePostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/post/save"
 
-	public let postId: PostId
+	public let post_id: PostId
 	public let save: Bool
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		save: Bool
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.save = save
 	}
 }

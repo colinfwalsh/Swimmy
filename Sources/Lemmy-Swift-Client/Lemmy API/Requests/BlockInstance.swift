@@ -6,14 +6,14 @@ public struct BlockInstanceRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/site/block"
 
-	public let instanceId: InstanceId
+	public let instance_id: InstanceId
 	public let block: Bool
 
 	public init(
-		instanceId: InstanceId,
+		instance_id: InstanceId,
 		block: Bool
 	) {
-		self.instanceId = instanceId
+		self.instance_id = instance_id
 		self.block = block
 	}
 }

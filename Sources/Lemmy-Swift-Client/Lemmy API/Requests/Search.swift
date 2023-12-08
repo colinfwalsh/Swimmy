@@ -7,53 +7,53 @@ public struct SearchRequest: APIRequest {
 	public static let path: String = "/search"
 
 	public let q: String
-	public let communityId: CommunityId?
-	public let communityName: String?
-	public let creatorId: PersonId?
-	public let type: SearchType?
+	public let community_id: CommunityId?
+	public let community_name: String?
+	public let creator_id: PersonId?
+	public let type_: SearchType?
 	public let sort: SortType?
-	public let listingType: ListingType?
+	public let listing_type: ListingType?
 	public let page: /* integer */ number?
 	public let limit: /* integer */ number?
 
 	public init(
 		q: String,
-		communityId: CommunityId? = nil,
-		communityName: String? = nil,
-		creatorId: PersonId? = nil,
-		type: SearchType? = nil,
+		community_id: CommunityId? = nil,
+		community_name: String? = nil,
+		creator_id: PersonId? = nil,
+		type_: SearchType? = nil,
 		sort: SortType? = nil,
-		listingType: ListingType? = nil,
+		listing_type: ListingType? = nil,
 		page: /* integer */ number? = nil,
 		limit: /* integer */ number? = nil
 	) {
 		self.q = q
-		self.communityId = communityId
-		self.communityName = communityName
-		self.creatorId = creatorId
-		self.type = type
+		self.community_id = community_id
+		self.community_name = community_name
+		self.creator_id = creator_id
+		self.type_ = type_
 		self.sort = sort
-		self.listingType = listingType
+		self.listing_type = listing_type
 		self.page = page
 		self.limit = limit
 	}
 }
 
 public struct SearchResponse: APIResponse {
-	public let type: SearchType
+	public let type_: SearchType
 	public let comments: [CommentView]
 	public let posts: [PostView]
 	public let communities: [CommunityView]
 	public let users: [PersonView]
 
 	public init(
-		type: SearchType,
+		type_: SearchType,
 		comments: [CommentView],
 		posts: [PostView],
 		communities: [CommunityView],
 		users: [PersonView]
 	) {
-		self.type = type
+		self.type_ = type_
 		self.comments = comments
 		self.posts = posts
 		self.communities = communities

@@ -9,18 +9,18 @@ public struct GetRepliesRequest: APIRequest {
 	public let sort: CommentSortType?
 	public let page: /* integer */ number?
 	public let limit: /* integer */ number?
-	public let unreadOnly: Bool?
+	public let unread_only: Bool?
 
 	public init(
 		sort: CommentSortType? = nil,
 		page: /* integer */ number? = nil,
 		limit: /* integer */ number? = nil,
-		unreadOnly: Bool? = nil
+		unread_only: Bool? = nil
 	) {
 		self.sort = sort
 		self.page = page
 		self.limit = limit
-		self.unreadOnly = unreadOnly
+		self.unread_only = unread_only
 	}
 }
 

@@ -1,59 +1,59 @@
 import Foundation
 
 public struct LocalSiteRateLimit: Codable, Hashable {
-	public let localSiteId: LocalSiteId
+	public let local_site_id: LocalSiteId
 	public let message: Int
-	public let messagePerSecond: Int
+	public let message_per_second: Int
 	public let post: Int
-	public let postPerSecond: Int
+	public let post_per_second: Int
 	public let register: Int
-	public let registerPerSecond: Int
+	public let register_per_second: Int
 	public let image: Int
-	public let imagePerSecond: Int
+	public let image_per_second: Int
 	public let comment: Int
-	public let commentPerSecond: Int
+	public let comment_per_second: Int
 	public let search: Int
-	public let searchPerSecond: Int
+	public let search_per_second: Int
 	public let published: String
 	public let updated: String?
-	public let importUserSettings: Int
-	public let importUserSettingsPerSecond: Int
+	public let import_user_settings: Int
+	public let import_user_settings_per_second: Int
 
 	public init(
-		localSiteId: LocalSiteId,
+		local_site_id: LocalSiteId,
 		message: Int,
-		messagePerSecond: Int,
+		message_per_second: Int,
 		post: Int,
-		postPerSecond: Int,
+		post_per_second: Int,
 		register: Int,
-		registerPerSecond: Int,
+		register_per_second: Int,
 		image: Int,
-		imagePerSecond: Int,
+		image_per_second: Int,
 		comment: Int,
-		commentPerSecond: Int,
+		comment_per_second: Int,
 		search: Int,
-		searchPerSecond: Int,
+		search_per_second: Int,
 		published: String,
 		updated: String? = nil,
-		importUserSettings: Int,
-		importUserSettingsPerSecond: Int
+		import_user_settings: Int,
+		import_user_settings_per_second: Int
 	) {
-		self.localSiteId = localSiteId
+		self.local_site_id = local_site_id
 		self.message = message
-		self.messagePerSecond = messagePerSecond
+		self.message_per_second = message_per_second
 		self.post = post
-		self.postPerSecond = postPerSecond
+		self.post_per_second = post_per_second
 		self.register = register
-		self.registerPerSecond = registerPerSecond
+		self.register_per_second = register_per_second
 		self.image = image
-		self.imagePerSecond = imagePerSecond
+		self.image_per_second = image_per_second
 		self.comment = comment
-		self.commentPerSecond = commentPerSecond
+		self.comment_per_second = comment_per_second
 		self.search = search
-		self.searchPerSecond = searchPerSecond
+		self.search_per_second = search_per_second
 		self.published = published
 		self.updated = updated
-		self.importUserSettings = importUserSettings
-		self.importUserSettingsPerSecond = importUserSettingsPerSecond
+		self.import_user_settings = import_user_settings
+		self.import_user_settings_per_second = import_user_settings_per_second
 	}
 }

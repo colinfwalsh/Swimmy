@@ -7,32 +7,32 @@ public struct GetPostRequest: APIRequest {
 	public static let path: String = "/post"
 
 	public let id: PostId?
-	public let commentId: CommentId?
+	public let comment_id: CommentId?
 
 	public init(
 		id: PostId? = nil,
-		commentId: CommentId? = nil
+		comment_id: CommentId? = nil
 	) {
 		self.id = id
-		self.commentId = commentId
+		self.comment_id = comment_id
 	}
 }
 
 public struct GetPostResponse: APIResponse {
-	public let postView: PostView
-	public let communityView: CommunityView
+	public let post_view: PostView
+	public let community_view: CommunityView
 	public let moderators: [CommunityModeratorView]
-	public let crossPosts: [PostView]
+	public let cross_posts: [PostView]
 
 	public init(
-		postView: PostView,
-		communityView: CommunityView,
+		post_view: PostView,
+		community_view: CommunityView,
 		moderators: [CommunityModeratorView],
-		crossPosts: [PostView]
+		cross_posts: [PostView]
 	) {
-		self.postView = postView
-		self.communityView = communityView
+		self.post_view = post_view
+		self.community_view = community_view
 		self.moderators = moderators
-		self.crossPosts = crossPosts
+		self.cross_posts = cross_posts
 	}
 }

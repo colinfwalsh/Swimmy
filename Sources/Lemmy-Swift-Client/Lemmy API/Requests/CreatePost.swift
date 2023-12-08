@@ -7,38 +7,38 @@ public struct CreatePostRequest: APIRequest {
 	public static let path: String = "/post"
 
 	public let name: String
-	public let communityId: CommunityId
+	public let community_id: CommunityId
 	public let url: String?
 	public let body: String?
 	public let honeypot: String?
 	public let nsfw: Bool?
-	public let languageId: LanguageId?
+	public let language_id: LanguageId?
 
 	public init(
 		name: String,
-		communityId: CommunityId,
+		community_id: CommunityId,
 		url: String? = nil,
 		body: String? = nil,
 		honeypot: String? = nil,
 		nsfw: Bool? = nil,
-		languageId: LanguageId? = nil
+		language_id: LanguageId? = nil
 	) {
 		self.name = name
-		self.communityId = communityId
+		self.community_id = community_id
 		self.url = url
 		self.body = body
 		self.honeypot = honeypot
 		self.nsfw = nsfw
-		self.languageId = languageId
+		self.language_id = language_id
 	}
 }
 
 public struct PostResponse: APIResponse {
-	public let postView: PostView
+	public let post_view: PostView
 
 	public init(
-		postView: PostView
+		post_view: PostView
 	) {
-		self.postView = postView
+		self.post_view = post_view
 	}
 }

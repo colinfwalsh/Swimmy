@@ -2,46 +2,46 @@ import Foundation
 
 public struct Comment: Codable, Identifiable, Hashable {
 	public let id: CommentId
-	public let creatorId: PersonId
-	public let postId: PostId
+	public let creator_id: PersonId
+	public let post_id: PostId
 	public let content: String
 	public let removed: Bool
 	public let published: String
 	public let updated: String?
 	public let deleted: Bool
-	public let apId: String
+	public let ap_id: String
 	public let local: Bool
 	public let path: String
 	public let distinguished: Bool
-	public let languageId: LanguageId
+	public let language_id: LanguageId
 
 	public init(
 		id: CommentId,
-		creatorId: PersonId,
-		postId: PostId,
+		creator_id: PersonId,
+		post_id: PostId,
 		content: String,
 		removed: Bool,
 		published: String,
 		updated: String? = nil,
 		deleted: Bool,
-		apId: String,
+		ap_id: String,
 		local: Bool,
 		path: String,
 		distinguished: Bool,
-		languageId: LanguageId
+		language_id: LanguageId
 	) {
 		self.id = id
-		self.creatorId = creatorId
-		self.postId = postId
+		self.creator_id = creator_id
+		self.post_id = post_id
 		self.content = content
 		self.removed = removed
 		self.published = published
 		self.updated = updated
 		self.deleted = deleted
-		self.apId = apId
+		self.ap_id = ap_id
 		self.local = local
 		self.path = path
 		self.distinguished = distinguished
-		self.languageId = languageId
+		self.language_id = language_id
 	}
 }

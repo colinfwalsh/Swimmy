@@ -6,14 +6,14 @@ public struct PurgeCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/admin/purge/community"
 
-	public let communityId: CommunityId
+	public let community_id: CommunityId
 	public let reason: String?
 
 	public init(
-		communityId: CommunityId,
+		community_id: CommunityId,
 		reason: String? = nil
 	) {
-		self.communityId = communityId
+		self.community_id = community_id
 		self.reason = reason
 	}
 }

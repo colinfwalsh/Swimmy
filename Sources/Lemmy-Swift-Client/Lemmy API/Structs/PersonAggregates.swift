@@ -1,17 +1,17 @@
 import Foundation
 
 public struct PersonAggregates: Codable, Hashable {
-	public let personId: PersonId
-	public let postCount: /* integer */ number
-	public let commentCount: /* integer */ number
+	public let person_id: PersonId
+	public let post_count: /* integer */ number
+	public let comment_count: /* integer */ number
 
 	public init(
-		personId: PersonId,
-		postCount: /* integer */ number,
-		commentCount: /* integer */ number
+		person_id: PersonId,
+		post_count: /* integer */ number,
+		comment_count: /* integer */ number
 	) {
-		self.personId = personId
-		self.postCount = postCount
-		self.commentCount = commentCount
+		self.person_id = person_id
+		self.post_count = post_count
+		self.comment_count = comment_count
 	}
 }

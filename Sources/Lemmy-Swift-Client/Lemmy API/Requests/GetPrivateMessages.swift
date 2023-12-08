@@ -6,30 +6,30 @@ public struct GetPrivateMessagesRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/private_message/list"
 
-	public let unreadOnly: Bool?
+	public let unread_only: Bool?
 	public let page: /* integer */ number?
 	public let limit: /* integer */ number?
-	public let creatorId: PersonId?
+	public let creator_id: PersonId?
 
 	public init(
-		unreadOnly: Bool? = nil,
+		unread_only: Bool? = nil,
 		page: /* integer */ number? = nil,
 		limit: /* integer */ number? = nil,
-		creatorId: PersonId? = nil
+		creator_id: PersonId? = nil
 	) {
-		self.unreadOnly = unreadOnly
+		self.unread_only = unread_only
 		self.page = page
 		self.limit = limit
-		self.creatorId = creatorId
+		self.creator_id = creator_id
 	}
 }
 
 public struct PrivateMessagesResponse: APIResponse {
-	public let privateMessages: [PrivateMessageView]
+	public let private_messages: [PrivateMessageView]
 
 	public init(
-		privateMessages: [PrivateMessageView]
+		private_messages: [PrivateMessageView]
 	) {
-		self.privateMessages = privateMessages
+		self.private_messages = private_messages
 	}
 }

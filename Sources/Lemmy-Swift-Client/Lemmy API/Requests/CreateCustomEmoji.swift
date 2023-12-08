@@ -8,31 +8,31 @@ public struct CreateCustomEmojiRequest: APIRequest {
 
 	public let category: String
 	public let shortcode: String
-	public let imageUrl: String
-	public let altText: String
+	public let image_url: String
+	public let alt_text: String
 	public let keywords: [String]
 
 	public init(
 		category: String,
 		shortcode: String,
-		imageUrl: String,
-		altText: String,
+		image_url: String,
+		alt_text: String,
 		keywords: [String]
 	) {
 		self.category = category
 		self.shortcode = shortcode
-		self.imageUrl = imageUrl
-		self.altText = altText
+		self.image_url = image_url
+		self.alt_text = alt_text
 		self.keywords = keywords
 	}
 }
 
 public struct CustomEmojiResponse: APIResponse {
-	public let customEmoji: CustomEmojiView
+	public let custom_emoji: CustomEmojiView
 
 	public init(
-		customEmoji: CustomEmojiView
+		custom_emoji: CustomEmojiView
 	) {
-		self.customEmoji = customEmoji
+		self.custom_emoji = custom_emoji
 	}
 }

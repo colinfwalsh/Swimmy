@@ -2,33 +2,33 @@ import Foundation
 
 public struct PrivateMessageReport: Codable, Identifiable, Hashable {
 	public let id: PrivateMessageReportId
-	public let creatorId: PersonId
-	public let privateMessageId: PrivateMessageId
-	public let originalPmText: String
+	public let creator_id: PersonId
+	public let private_message_id: PrivateMessageId
+	public let original_pm_text: String
 	public let reason: String
 	public let resolved: Bool
-	public let resolverId: PersonId?
+	public let resolver_id: PersonId?
 	public let published: String
 	public let updated: String?
 
 	public init(
 		id: PrivateMessageReportId,
-		creatorId: PersonId,
-		privateMessageId: PrivateMessageId,
-		originalPmText: String,
+		creator_id: PersonId,
+		private_message_id: PrivateMessageId,
+		original_pm_text: String,
 		reason: String,
 		resolved: Bool,
-		resolverId: PersonId? = nil,
+		resolver_id: PersonId? = nil,
 		published: String,
 		updated: String? = nil
 	) {
 		self.id = id
-		self.creatorId = creatorId
-		self.privateMessageId = privateMessageId
-		self.originalPmText = originalPmText
+		self.creator_id = creator_id
+		self.private_message_id = private_message_id
+		self.original_pm_text = original_pm_text
 		self.reason = reason
 		self.resolved = resolved
-		self.resolverId = resolverId
+		self.resolver_id = resolver_id
 		self.published = published
 		self.updated = updated
 	}

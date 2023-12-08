@@ -6,17 +6,17 @@ public struct FeaturePostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/feature"
 
-	public let postId: PostId
+	public let post_id: PostId
 	public let featured: Bool
-	public let featureType: PostFeatureType
+	public let feature_type: PostFeatureType
 
 	public init(
-		postId: PostId,
+		post_id: PostId,
 		featured: Bool,
-		featureType: PostFeatureType
+		feature_type: PostFeatureType
 	) {
-		self.postId = postId
+		self.post_id = post_id
 		self.featured = featured
-		self.featureType = featureType
+		self.feature_type = feature_type
 	}
 }

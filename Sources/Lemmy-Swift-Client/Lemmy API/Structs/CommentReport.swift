@@ -2,33 +2,33 @@ import Foundation
 
 public struct CommentReport: Codable, Identifiable, Hashable {
 	public let id: CommentReportId
-	public let creatorId: PersonId
-	public let commentId: CommentId
-	public let originalCommentText: String
+	public let creator_id: PersonId
+	public let comment_id: CommentId
+	public let original_comment_text: String
 	public let reason: String
 	public let resolved: Bool
-	public let resolverId: PersonId?
+	public let resolver_id: PersonId?
 	public let published: String
 	public let updated: String?
 
 	public init(
 		id: CommentReportId,
-		creatorId: PersonId,
-		commentId: CommentId,
-		originalCommentText: String,
+		creator_id: PersonId,
+		comment_id: CommentId,
+		original_comment_text: String,
 		reason: String,
 		resolved: Bool,
-		resolverId: PersonId? = nil,
+		resolver_id: PersonId? = nil,
 		published: String,
 		updated: String? = nil
 	) {
 		self.id = id
-		self.creatorId = creatorId
-		self.commentId = commentId
-		self.originalCommentText = originalCommentText
+		self.creator_id = creator_id
+		self.comment_id = comment_id
+		self.original_comment_text = original_comment_text
 		self.reason = reason
 		self.resolved = resolved
-		self.resolverId = resolverId
+		self.resolver_id = resolver_id
 		self.published = published
 		self.updated = updated
 	}

@@ -7,7 +7,7 @@ public struct InstanceWithFederationState: Codable, Identifiable, Hashable {
 	public let updated: String?
 	public let software: String?
 	public let version: String?
-	public let federationState: ReadableFederationState?
+	public let federation_state: ReadableFederationState?
 
 	public init(
 		id: InstanceId,
@@ -16,7 +16,7 @@ public struct InstanceWithFederationState: Codable, Identifiable, Hashable {
 		updated: String? = nil,
 		software: String? = nil,
 		version: String? = nil,
-		federationState: ReadableFederationState? = nil
+		federation_state: ReadableFederationState? = nil
 	) {
 		self.id = id
 		self.domain = domain
@@ -24,6 +24,6 @@ public struct InstanceWithFederationState: Codable, Identifiable, Hashable {
 		self.updated = updated
 		self.software = software
 		self.version = version
-		self.federationState = federationState
+		self.federation_state = federation_state
 	}
 }
