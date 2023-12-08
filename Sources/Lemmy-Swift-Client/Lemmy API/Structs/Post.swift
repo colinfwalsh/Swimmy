@@ -20,7 +20,7 @@ public struct Post: Codable, Identifiable, Hashable {
 	public let local: Bool
 	public let embed_video_url: String?
 	public let language_id: LanguageId
-	public let featured_community: Bool
+	public let featured_community: Bool?
 	public let featured_local: Bool
 
 	public init(
@@ -43,7 +43,7 @@ public struct Post: Codable, Identifiable, Hashable {
 		local: Bool,
 		embed_video_url: String? = nil,
 		language_id: LanguageId,
-		featured_community: Bool,
+		featured_community: Bool?,
 		featured_local: Bool
 	) {
 		self.id = id

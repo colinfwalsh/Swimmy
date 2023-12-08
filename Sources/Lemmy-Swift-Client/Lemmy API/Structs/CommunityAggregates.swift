@@ -11,7 +11,6 @@ public struct CommunityAggregates: Codable, Identifiable, Hashable {
 	public let users_active_week: Int
 	public let users_active_month: Int
 	public let users_active_half_year: Int
-	public let hot_rank: Int
 
 	public init(
 		id: Int,
@@ -23,8 +22,7 @@ public struct CommunityAggregates: Codable, Identifiable, Hashable {
 		users_active_day: Int,
 		users_active_week: Int,
 		users_active_month: Int,
-		users_active_half_year: Int,
-		hot_rank: Int
+		users_active_half_year: Int
 	) {
 		self.id = id
 		self.community_id = community_id
@@ -36,6 +34,5 @@ public struct CommunityAggregates: Codable, Identifiable, Hashable {
 		self.users_active_week = users_active_week
 		self.users_active_month = users_active_month
 		self.users_active_half_year = users_active_half_year
-		self.hot_rank = hot_rank
 	}
 }
