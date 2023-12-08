@@ -149,7 +149,6 @@ function snakeToCamel(str) {
                 );
 
     if (converted.slice(-1) === "_") {
-        console.log(str)
         return converted.slice(0, -1);
     }
 
