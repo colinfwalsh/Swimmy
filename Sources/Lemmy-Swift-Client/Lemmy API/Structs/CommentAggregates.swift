@@ -11,7 +11,6 @@ public struct CommentAggregates: Codable, Identifiable, Hashable {
 	public let downvotes: Int
 	public let published: String
 	public let child_count: Int
-	public let hot_rank: Int?
     
 	public init(
 		comment_id: CommentId,
@@ -19,8 +18,7 @@ public struct CommentAggregates: Codable, Identifiable, Hashable {
 		upvotes: Int,
 		downvotes: Int,
 		published: String,
-		child_count: Int,
-		hot_rank: Int?
+		child_count: Int
 	) {
 		self.comment_id = comment_id
 		self.score = score
@@ -28,6 +26,5 @@ public struct CommentAggregates: Codable, Identifiable, Hashable {
 		self.downvotes = downvotes
 		self.published = published
 		self.child_count = child_count
-		self.hot_rank = hot_rank
 	}
 }
