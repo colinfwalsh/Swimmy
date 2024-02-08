@@ -56,7 +56,7 @@ public class LemmyAPI {
                 request.url = request.url?
                     .appending(queryItems: queryItems)
             } else {
-                var urlComps = URLComponents(url: request.url!, resolvingAgainstBaseURL: true)
+                var urlComps = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)
                 urlComps?.queryItems = queryItems
                 request.url = urlComps?.url
             }
