@@ -32,24 +32,6 @@ public class LemmyAPI {
 		self.urlSession = urlSession
 	}
 
-	func makeURL<Request: APIRequest>(_ req: Request) -> URL? {
-		let mirror = Mirror(reflecting: req)
-		let queryItems: [URLQueryItem] = mirror.children.compactMap { label, value in
-			guard let label = label?.snakeCased(),
-			      let valueString = value as? CustomStringConvertible else { return nil }
-
-			return URLQueryItem(name: label, value: String(describing: valueString))
-		}
-
-		if #available(iOS 16, *) {
-            return baseUrl.appending(queryItems: queryItems)
-		} else {
-            var urlComps = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false)
-			urlComps?.queryItems = queryItems
-			return urlComps?.url
-		}
-	}
-
 	public func urlRequest<T: APIRequest>(_ apiRequest: T) throws -> URLRequest {
 		var request: URLRequest
 
@@ -62,7 +44,29 @@ public class LemmyAPI {
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
-			request.url = makeURL(apiRequest)
+			let mirror = Mirror(reflecting: apiRequest)
+			let queryItems: [URLQueryItem] = mirror.children
+				.compactMap { label, value in
+					guard let label = label?.snakeCased(),
+					      let valueString = value as? CustomStringConvertible
+					else { return nil }
+					return URLQueryItem(
+						name: label,
+						value: String(describing: valueString)
+					)
+				}
+
+			if #available(iOS 16, *) {
+				request.url = request.url?
+					.appending(queryItems: queryItems)
+			} else {
+				var urlComps = URLComponents(
+					url: request.url!,
+					resolvingAgainstBaseURL: false
+				)
+				urlComps?.queryItems = queryItems
+				request.url = urlComps?.url
+			}
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
