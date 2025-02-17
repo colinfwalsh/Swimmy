@@ -35,11 +35,7 @@ public class LemmyAPI {
 	public func urlRequest<T: APIRequest>(_ apiRequest: T) throws -> URLRequest {
 		var request: URLRequest
 
-		if #available(iOS 16, *) {
-			request = URLRequest(url: baseUrl.appending(path: T.path))
-		} else {
-			request = URLRequest(url: baseUrl.appendingPathComponent(T.path))
-		}
+        request = URLRequest(url: baseUrl.appendingPathComponent(T.path))
 
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
@@ -56,17 +52,12 @@ public class LemmyAPI {
 					)
 				}
 
-			if #available(iOS 16, *) {
-				request.url = request.url?
-					.appending(queryItems: queryItems)
-			} else {
 				var urlComps = URLComponents(
 					url: request.url!,
 					resolvingAgainstBaseURL: false
 				)
 				urlComps?.queryItems = queryItems
 				request.url = urlComps?.url
-			}
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
