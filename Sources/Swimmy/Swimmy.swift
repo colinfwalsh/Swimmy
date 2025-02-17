@@ -32,7 +32,7 @@ public class LemmyAPI {
 		self.urlSession = urlSession
 	}
 
-	func makeURL<Request: APIRequest>(_ req: Request, url: URL?) -> URL? {
+	func makeURL<Request: APIRequest>(_ req: Request) -> URL? {
 		let mirror = Mirror(reflecting: req)
 		let queryItems: [URLQueryItem] = mirror.children.compactMap { label, value in
 			guard let label = label?.snakeCased(),
@@ -42,12 +42,9 @@ public class LemmyAPI {
 		}
 
 		if #available(iOS 16, *) {
-			return url?.appending(queryItems: queryItems)
+            return baseUrl.appending(queryItems: queryItems)
 		} else {
-			guard let url
-			else { return nil }
-
-			var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            var urlComps = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false)
 			urlComps?.queryItems = queryItems
 			return urlComps?.url
 		}
@@ -65,7 +62,7 @@ public class LemmyAPI {
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
-			request.url = makeURL(apiRequest, url: baseUrl)
+			request.url = makeURL(apiRequest)
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
