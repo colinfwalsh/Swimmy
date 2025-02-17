@@ -31,43 +31,41 @@ public class LemmyAPI {
 		self.headers = headers
 		self.urlSession = urlSession
 	}
-    
-    func makeURL<Request: APIRequest>(_ req: Request, url: URL?) -> URL? {
-        let mirror = Mirror(reflecting: req)
-        let queryItems: [URLQueryItem] = mirror.children.compactMap { label, value in
-                guard let label = label?.snakeCased(),
-                      let valueString = value as? CustomStringConvertible else { return nil }
 
-                return URLQueryItem(name: label, value: String(describing: valueString))
-            }
-        
-        if #available(iOS 16, *) {
-            return url?.appending(queryItems: queryItems)
-        } else {
-            guard let url
-            else { return nil }
-            
-            var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
-            urlComps?.queryItems = queryItems
-            return urlComps?.url
-        }
-    }
+	func makeURL<Request: APIRequest>(_ req: Request, url: URL?) -> URL? {
+		let mirror = Mirror(reflecting: req)
+		let queryItems: [URLQueryItem] = mirror.children.compactMap { label, value in
+			guard let label = label?.snakeCased(),
+			      let valueString = value as? CustomStringConvertible else { return nil }
+
+			return URLQueryItem(name: label, value: String(describing: valueString))
+		}
+
+		if #available(iOS 16, *) {
+			return url?.appending(queryItems: queryItems)
+		} else {
+			guard let url
+			else { return nil }
+
+			var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+			urlComps?.queryItems = queryItems
+			return urlComps?.url
+		}
+	}
 
 	public func urlRequest<T: APIRequest>(_ apiRequest: T) throws -> URLRequest {
-        var request: URLRequest
-        
-        var newURL = baseUrl
-        
-        if #available(iOS 16, *) {
-            request = URLRequest(url: newURL.appending(path: T.path))
-        } else {
-            request = URLRequest(url: newURL.appendingPathComponent(T.path))
-        }
-        
+		var request: URLRequest
+
+		if #available(iOS 16, *) {
+			request = URLRequest(url: baseUrl.appending(path: T.path))
+		} else {
+			request = URLRequest(url: baseUrl.appendingPathComponent(T.path))
+		}
+
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
-            request.url = makeURL(apiRequest, url: newURL)
+			request.url = makeURL(apiRequest, url: baseUrl)
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
