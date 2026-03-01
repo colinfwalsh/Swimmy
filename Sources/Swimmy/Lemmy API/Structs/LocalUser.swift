@@ -27,6 +27,20 @@ public struct LocalUser: Codable, Identifiable, Hashable {
 	public let enableAnimatedImages: Bool
 	public let collapseBotComments: Bool
 
+	/// Custom CodingKeys needed because `totp_2faEnabled` has an embedded underscore
+	/// that breaks `.convertFromSnakeCase` — it converts `totp_2fa_enabled` to
+	/// `totp2FaEnabled` which doesn't match the synthesized key `totp_2faEnabled`.
+	/// The raw value must match what `.convertFromSnakeCase` produces.
+	private enum CodingKeys: String, CodingKey {
+		case id, personId, email, showNsfw, theme, defaultSortType, defaultListingType
+		case interfaceLanguage, showAvatars, sendNotificationsToEmail, showScores
+		case showBotAccounts, showReadPosts, emailVerified, acceptedApplication
+		case openLinksInNewTab, blurNsfw, autoExpand, infiniteScrollEnabled, admin
+		case postListingMode, enableKeyboardNavigation, enableAnimatedImages
+		case collapseBotComments
+		case totp_2faEnabled = "totp2FaEnabled"
+	}
+
 	public init(
 		id: LocalUserId,
 		personId: PersonId,
